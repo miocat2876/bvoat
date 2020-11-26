@@ -1,4 +1,4 @@
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter,Route, Switch } from 'react-router-dom';
 import Main from './pages/main/Main.js';
 import Header from './components/header/Header';
 import Menu from './components/menu/Menu';
@@ -12,9 +12,11 @@ function App() {
       <div className="wrapper">
         <Header />
         <Menu />
-        <Switch>
-          <Route exact path="/" component={Main} />
-        </Switch>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <Switch>
+            <Route exact path="/" component={Main} />
+          </Switch>
+        </BrowserRouter>
       </div>
     </>
   );
