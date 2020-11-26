@@ -12,9 +12,11 @@ function App() {
       <div className="wrapper">
         <Header />
         <Menu />
-        <Switch>
-          <Route exact path="/" component={Main} />
-        </Switch>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <Switch>
+            <Route exact path="/" component={Main} />
+          </Switch>
+        </BrowserRouter>
       </div>
     </>
   );
